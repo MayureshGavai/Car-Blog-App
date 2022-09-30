@@ -1,0 +1,26 @@
+<% if(blog != null) {%> 
+
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/Categories">Categories</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><%- blog.title %> </li>
+    </ol>
+</nav>
+
+
+<div class="px-4 py-2 my-5 text-start">
+
+    <h1 class="display-6 fw-bold"><%- blog.title %></h1>
+    <div class="col-12 mt-2"><i class="bi bi-pen"> <%- blog.author %></i></div>
+    <img src="/uploads/<%- blog.image %> " class="d-block mx-auto mt-5 mb-4 img-fluid" alt="<%- blog.title %>" width="900" height="550" Loading="lazy"/>
+    <div class="col-12" style="white-space: pre-line;">
+        <%- blog.article %>     
+    </div>
+</div>
+
+
+
+
+<% } %> 

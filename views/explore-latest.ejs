@@ -1,0 +1,25 @@
+<h1 class="pb-4">Explore Latest</h1>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Explore Latest</li>
+    </ol>
+</nav>
+
+
+
+<div class="row row-cols-2 row-cols-lg-4 mb-6 g-2 g-lg-3">
+    <% if(blog != '') { %>
+      <% blog.forEach(function(blog, index){ %>
+      <a href="/blog/<%= blog._id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+          <img src="/uploads/<%= blog.image %>" alt="<%= blog.title %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%= blog.title %></div>
+      </a>
+      <% }) %>
+    <% } else { %>
+      <p>No items found.</p>
+    <% } %>
+  </div>

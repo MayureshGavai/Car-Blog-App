@@ -1,0 +1,87 @@
+<div class="px-4 py-5 my-4 text-center">
+    <h1 class="display-5 fw-bold mb-4">Submit Your Blog</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead">Share your amazing blogs with thousands of people accross the world. Fill our form to get started.</p>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="row justify-content-center pb-5">
+
+    <% if(infoSubmitObj != '') {%> 
+        <div class="alert alert-success col-8" role="alert">
+            <%= infoSubmitObj %> 
+        </div>
+    <% } %> 
+
+    <% if(infoErrorsObj != '') {%> 
+        <div class="alert alert-danger col-8" role="alert">
+            <%= infoErrorsObj[0].message %> 
+        </div>
+    <% } %>
+        
+
+
+    <div class="col-8">
+        <form action="/submit-blog" enctype="multipart/form-data" method="POST">
+
+            <div class="row g-3">
+
+                <div class="col-12">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" name="title" id="title" class="form-control">
+                </div>
+
+                <div class="col-12">
+                    <label for="author" class="form-label">Author</label>
+                    <input type="text" name="author" id="author" class="form-control">
+                </div>
+
+                <div class="col-12">
+                    <label for="category" class="form-label">Select Category</label>
+                    <select class="form-select form-control" name="category" aria-label="Category">
+                      <option selected>Select Category</option>
+                      <option value="Hatchback">Hatchback</option>
+                      <option value="Electric">Electric</option>
+                      <option value="Sedan">Sedan</option>
+                      <option value="Compact Suv">Compact Suv</option>
+                      <option value="Suv">Suv</option>
+                      <option value="Muv">Muv</option>
+                      <option value="Offroad">Offroad</option>
+                      <option value="Pickup">Pickup</option>
+                      <option value="Luxury">Luxury</option>
+                      <option value="Convertable">Convertable</option>
+                      <option value="Sports">Sports</option>
+                    </select>
+                  </div>
+
+                <div class="col-12">
+                    <label for="article" class="form-label">Article</label>
+                    <textarea name="article" id="article" cols="30" rows="7" class="form-control"></textarea>
+                </div>
+
+                <div class="col-12">
+                    <label for="image" class="form-label">Car Image</label>
+                    <input type="file" class="form-control" name="image" accept="image/*">
+                </div>
+
+                <div class="col-12 d-grid mt-5">
+                    <button type="submit" class="btn btn-success">Submit Blog</button>
+                </div>
+
+            </div>
+
+        </form>
+
+
+
+
+    </div>
+</div>
