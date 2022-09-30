@@ -7,10 +7,8 @@ const flash = require('connect-flash');
 
 
 const app = express();
-let port = process.env.PORT;
-if(port == null || port == ""){
-    port = 3000;
-}
+const port = process.env.PORT || 3000;
+
 
 require('dotenv').config();
 
